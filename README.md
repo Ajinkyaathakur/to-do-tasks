@@ -56,4 +56,73 @@ Put /tasks-
 Delete /tasks-
 ![API_Endpoint_Delete](https://github.com/Ajinkyaathakur/to-do-tasks/assets/149994043/b95730aa-1e57-43c7-92e8-b74e35d8b5f5)
 
+## Sample Requests
+
+1.	`GET /tasks`: Retrieve a list of all tasks.
+     - **Request** GET  http://localhost:3000/tasks/
+     - **Response:**    [
+                          {
+                              "id": 1,
+                                "title": "Design Website",
+                                  "description": "Design a landing page for a Real Estate Website"
+                          },
+                          {
+                               "id": 2,
+                                "title": "Create API",
+                          "description": "Create an API using Node.js and postman for CRUD (create / insert / update / delete)"
+                          }
+                      ]
+2.	`GET /tasks/:id`: Retrieve a specific task by ID.
+	- **Request** GET  http://localhost:3000/tasks/1
+     - **Response:**    {
+                            "id": 1,
+                            "title": "Design Website",
+                             "description": "Design a landing page for a Real Estate Website"
+                        }
+3.	`POST /tasks`: Create a new task. 
+     - **Request** POSt  http://localhost:3000/tasks/
+     - **Body:raw**     {
+                              "id": 1,
+                                "title": "Design Website",
+                                  "description": "Design a landing page for a Real Estate Website"
+                        }
+     - **Response:**    {
+                              "id": 3,
+                              "title": "Design Website",
+                               "description": "Design a landing page for a Real Estate Website"
+                        }
+4.	`PUT /tasks/:id`: Update an existing task by ID. 
+     - **Request** PUT  http://localhost:3000/tasks/1
+     - **Body:raw**   {
+                            "title": "Changed the description",
+                            "description": "Updated the description"
+                      }
+     - **Response:**    [
+                          {
+                              "id": 1,
+                                "title": "Design Website",
+                                  "description": "Design a landing page for a Real Estate Website"
+                          },
+                          {
+                               "id": 2,
+                                "title": "Create API",
+                          "description": "Create an API using Node.js and postman for CRUD (create / insert / update / delete)"
+                          }
+                      ]
+5.	`DELETE /tasks/:id`: Delete a task by ID.
+     - **Request** Delete  http://localhost:3000/tasks/1
+     - **Response:**    {
+                              "message": "Task Deleted Successfully"
+                        }
+
+
+
+
+
+
+
+
+
+
+
 
