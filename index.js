@@ -83,7 +83,7 @@ app.delete('/tasks/:id', (req, res) => {
     tasks = tasks.filter(task => task.id !== taskId);
 
     if (tasks.length < initialLength) {
-        res.status(204).send({message: 'Task Deleted Successfully'});
+        res.status(200).send({message: 'Task Deleted Successfully'});
     } else {
         res.status(404).json({ error: 'Task not found' });
     }
